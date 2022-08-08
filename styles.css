@@ -1,35 +1,41 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(260deg, #6a9eec, #65c0d3);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
+  background: linear-gradient(260deg, #6a9eec, #65c0d3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
-    background-color: white;
-    color: black;
-    padding: 5rem;
-    border-radius: 2.5rem;
+  background-color: white;
+  color: black;
+  padding: 5rem;
+  border-radius: 2.5rem;
 }
 
-.home, .notifications, .messages {
-    display: flex;
-    padding: 2rem;
-    align-items: center;
+.home,
+.notifications,
+.messages {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  cursor: pointer;
 }
 
-.home-title, .notification-title, .messages-title {
-    padding-left: 2rem;
+.home-title,
+.notification-title,
+.messages-title {
+  padding-left: 2rem;
 }
 
-.notification-svg, .message-svg {
-    overflow: visible;
+.notification-svg,
+.messages-svg {
+  overflow: visible;
 }

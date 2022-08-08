@@ -1,4 +1,4 @@
-const tl = gsap.timeline({
+const timeline = gsap.timeline({
   defaults: {
     duration: 0.35,
     ease: "Power2.easeOut",
@@ -7,6 +7,7 @@ const tl = gsap.timeline({
 
 const home = document.querySelector(".home");
 const notifications = document.querySelector(".notifications");
+const messages = document.querySelector(".messages");
 
 gsap.set(".feather", { scale: 0, transformOrigin: "center" });
 home.addEventListener("click", () => {
@@ -21,7 +22,7 @@ home.addEventListener("click", () => {
 
 gsap.set(".bell", { transformOrigin: "top center" });
 gsap.set(".ringer", { transformOrigin: "top center" });
-gsap.set(".wave", { opacity: 0, transformOrigin: 'bottom' });
+gsap.set(".wave", { opacity: 0, transformOrigin: "bottom" });
 notifications.addEventListener("click", () => {
   gsap.fromTo(
     ".bell",
@@ -38,4 +39,17 @@ notifications.addEventListener("click", () => {
     { opacity: 1, scale: 0 },
     { opacity: 0, scale: 1.3, duration: 1 }
   );
+});
+
+gsap.set(".flap", { transformOrigin: "top" });
+messages.addEventListener("click", () => {
+  timeline.fromTo(".messages-svg", { scale: 1 }, { scale: 0.9 });
+  timeline.fromTo(".flap", { scale: 1 }, { scale: -1 }, "<50%");
+  timeline.fromTo(".messages-svg", { scale: 0.9 }, { scale: 1 }, "<50%");
+  timeline.fromTo(
+    ".note",
+    { y: 0, opacity: 1 },
+    { y: -40, opacity: 0, duration: 0.75 }
+  );
+  timeline.to(".flap", { scale: 1 }, "<50%");
 });
